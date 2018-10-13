@@ -1,0 +1,26 @@
+{
+  "name": "fun-with-mobx",
+  "version": "1.0.0",
+  "description": "fun with react and mobX",
+  "main": "index.js",
+  "repository": "https://github.com/Harrison1/fun-with-mobx.git",
+  "author": "Harrison <hmcguire13@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html/"
+  },
+  "dependencies": {
+    "mobx": "^5.5.0",
+    "mobx-react": "^5.2.8",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.10.3"
+  }
+}
