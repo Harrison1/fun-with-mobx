@@ -1,9 +1,8 @@
 import React from "react"
 import TodoList from "./TodoList"
-import TodoListModel from "../stores/TodoList"
-import TodoModel from "../stores/Todo"
+import TodoListStore from "../stores/TodoList"
 
-const store = new TodoListModel()
+const store = new TodoListStore()
 
 store.addTodo("Get Coffee")
 store.addTodo("Write simpler code")

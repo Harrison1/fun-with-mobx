@@ -28176,11 +28176,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _mobxReact = require("mobx-react");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Todo = (0, _mobxReact.observer)(function (_ref) {
   var todo = _ref.todo;
@@ -28202,7 +28202,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _mobx = require("mobx");
 
@@ -28213,8 +28213,6 @@ var _Todo = _interopRequireDefault(require("./Todo"));
 var _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -28330,6 +28328,7 @@ function (_React$Component) {
     var _this2 = this;
 
     return function (e) {
+      console.log(e.target.value);
       _this2.newTodoTitle = e.target.value;
     };
   }
@@ -28406,8 +28405,8 @@ function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var TodoModel = (_class = function TodoModel(title) {
-  _classCallCheck(this, TodoModel);
+var Todo = (_class = function Todo(title) {
+  _classCallCheck(this, Todo);
 
   this.id = Math.random();
 
@@ -28425,7 +28424,7 @@ var TodoModel = (_class = function TodoModel(title) {
     return false;
   }
 })), _class);
-exports.default = TodoModel;
+exports.default = Todo;
 },{"mobx":"../node_modules/mobx/lib/mobx.module.js"}],"stores/TodoList.js":[function(require,module,exports) {
 "use strict";
 
@@ -28536,8 +28535,6 @@ var _TodoList = _interopRequireDefault(require("./TodoList"));
 
 var _TodoList2 = _interopRequireDefault(require("../stores/TodoList"));
 
-var _Todo = _interopRequireDefault(require("../stores/Todo"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var store = new _TodoList2.default();
@@ -28556,7 +28553,7 @@ var TodoContainer = function TodoContainer() {
 
 var _default = TodoContainer;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./TodoList":"components/TodoList.js","../stores/TodoList":"stores/TodoList.js","../stores/Todo":"stores/Todo.js"}],"components/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./TodoList":"components/TodoList.js","../stores/TodoList":"stores/TodoList.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28621,7 +28618,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56606" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50027" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
