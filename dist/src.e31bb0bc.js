@@ -28328,7 +28328,6 @@ function (_React$Component) {
     var _this2 = this;
 
     return function (e) {
-      console.log(e.target.value);
       _this2.newTodoTitle = e.target.value;
     };
   }
@@ -28409,6 +28408,7 @@ var Todo = (_class = function Todo(title) {
   _classCallCheck(this, Todo);
 
   this.id = Math.random();
+  this.date = Date.now();
 
   _initDefineProp(this, "title", _descriptor, this);
 
@@ -28553,7 +28553,79 @@ var TodoContainer = function TodoContainer() {
 
 var _default = TodoContainer;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./TodoList":"components/TodoList.js","../stores/TodoList":"stores/TodoList.js"}],"components/App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./TodoList":"components/TodoList.js","../stores/TodoList":"stores/TodoList.js"}],"components/SecondTodo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _mobx = require("mobx");
+
+var _mobxReact = require("mobx-react");
+
+var _Todo = _interopRequireDefault(require("./Todo"));
+
+var _TodoList = _interopRequireDefault(require("../stores/TodoList"));
+
+var _class;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var store = new _TodoList.default();
+store.addTodo("Get Weird");
+store.addTodo("Now get espresso");
+
+var SecondTodo = (0, _mobxReact.observer)(_class =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(SecondTodo, _React$Component);
+
+  function SecondTodo() {
+    _classCallCheck(this, SecondTodo);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SecondTodo).apply(this, arguments));
+  }
+
+  _createClass(SecondTodo, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, _react.default.createElement("hr", null), _react.default.createElement("ul", null, store.todos.map(function (todo) {
+        return _react.default.createElement(_Todo.default, {
+          todo: todo,
+          key: todo.id
+        });
+      })));
+    }
+  }]);
+
+  return SecondTodo;
+}(_react.default.Component)) || _class;
+
+var _default = SecondTodo;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","mobx":"../node_modules/mobx/lib/mobx.module.js","mobx-react":"../node_modules/mobx-react/index.module.js","./Todo":"components/Todo.js","../stores/TodoList":"stores/TodoList.js"}],"components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28569,17 +28641,19 @@ var _Title = _interopRequireDefault(require("./Title"));
 
 var _TodoContainer = _interopRequireDefault(require("./TodoContainer"));
 
+var _SecondTodo = _interopRequireDefault(require("./SecondTodo"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
   return _react.default.createElement(_Container.default, null, _react.default.createElement(_Title.default, {
     title: "Hello Mob X and Parcel"
-  }), _react.default.createElement(_TodoContainer.default, null));
+  }), _react.default.createElement(_TodoContainer.default, null), _react.default.createElement(_SecondTodo.default, null));
 };
 
 var _default = App;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./Container":"components/Container.js","./Title":"components/Title.js","./TodoContainer":"components/TodoContainer.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./Container":"components/Container.js","./Title":"components/Title.js","./TodoContainer":"components/TodoContainer.js","./SecondTodo":"components/SecondTodo.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -28618,7 +28692,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50194" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

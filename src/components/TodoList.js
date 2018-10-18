@@ -9,7 +9,6 @@ class TodoList extends React.Component {
 
   @action
   handleInputChange = e => {
-    console.log(e.target.value)
     this.newTodoTitle = e.target.value;
   };
 
