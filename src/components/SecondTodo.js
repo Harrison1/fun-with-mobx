@@ -1,7 +1,7 @@
-import React from "react"
-import { observer } from "mobx-react"
-import Todo from "./Todo"
-import TodoListStore from "../stores/TodoList"
+import React from 'react'
+import { observer } from 'mobx-react'
+import Todo from './Todo'
+import TodoListStore from '../stores/TodoList'
 
 const store = new TodoListStore()
 
