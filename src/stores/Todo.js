@@ -7,6 +7,6 @@ export default class Todo {
   @observable finished = false
 
   constructor(title) {
-    this.title = title;
+    this.title = title
   }
 }
