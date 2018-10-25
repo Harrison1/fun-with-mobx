@@ -12,6 +12,6 @@ export default class TodoListModel {
 
   @action
   addTodo(title) {
-    this.todos.push(new Todo(title));
+    this.todos.push(new Todo(title))
   }
 }
