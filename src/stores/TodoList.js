@@ -3,11 +3,11 @@ import { observable, computed, action } from "mobx";
 import Todo from "./Todo";
 
 export default class TodoListModel {
-  @observable todos = [];
+  @observable todos = []
 
   @computed
   get unfinishedTodoCount() {
-    return this.todos.filter(todo => !todo.finished).length;
+    return this.todos.filter(todo => !todo.finished).length
   }
 
   @action
