@@ -5,8 +5,8 @@ import TodoListStore from '../stores/TodoList'
 
 const store = new TodoListStore()
 
-store.addTodo("Get Weird")
-store.addTodo("Now get espresso")
+store.addTodo('Get Weird')
+store.addTodo('Now get espresso')
 
 @observer
 class SecondTodo extends React.Component {
