@@ -1,6 +1,6 @@
 import React from 'react'
 import TodoList from './TodoList'
-import TodoListStore from "../stores/TodoList"
+import TodoListStore from '../stores/TodoList'
 
 const store = new TodoListStore()
 
