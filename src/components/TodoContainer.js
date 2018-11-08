@@ -4,7 +4,7 @@ import TodoListStore from '../stores/TodoList'
 
 const store = new TodoListStore()
 
-store.addTodo("Get Coffee")
+store.addTodo('Get Coffee')
 store.addTodo("Write simpler code")
 store.todos[0].finished = true
 
