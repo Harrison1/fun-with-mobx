@@ -9,7 +9,7 @@ store.addTodo('Write simpler code')
 store.todos[0].finished = true
 
 setTimeout(() => {
-  store.addTodo("Get a cookie as well");
+  store.addTodo('Get a cookie as well');
 }, 2000)
 
 const TodoContainer = () =>
